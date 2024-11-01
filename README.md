@@ -20,3 +20,28 @@ Este proyecto es un conversor de monedas en Java que utiliza la API de ExchangeR
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/tuusuario/conversor-de-monedas.git
+2. Navega al directorio del proyecto:
+   ```bash
+   cd conversor-de-monedas
+3. Compila y ejecuta el proyecto en IntelliJ.
+
+## Uso
+
+Ejecuta el programa y sigue las instrucciones en pantalla para realizar conversiones de moneda.
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Siéntete libre de enviar un pull request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.
+
+
+### Instrucciones
+
+1. Asegúrate de reemplazar `tuusuario` en la URL del repositorio por tu nombre de usuario de GitHub.
+2. Puedes agregar más detalles según necesites, como ejemplos de uso o información sobre la API.
+
+Si necesitas más modificaciones o elementos específicos, ¡dímelo!
+
