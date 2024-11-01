@@ -8,7 +8,7 @@ import com.google.gson.JsonParser;
 
 
 public static double obtenerTasaCambio(String monedaOrigen, String monedaDestino) {
-    String apiKey = "59b53b1a79174b7d24448e4a";
+    String apiKey = "TU_API_KEY";
     String urlStr = String.format("https://v6.exchangerate-api.com/v6/%s/pair/%s/%s", apiKey, monedaOrigen, monedaDestino);
 
     try {
