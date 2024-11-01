@@ -30,16 +30,16 @@ public class ConversorDeMonedas {
 
             switch (opcion) {
                 case 1:
-                    convertirMoneda(monedaPrincipal, "USD", scanner);
+                    realizarConversion(monedaPrincipal, "USD", scanner);
                     break;
                 case 2:
-                    convertirMoneda(monedaPrincipal, "CLP", scanner);
+                    realizarConversion(monedaPrincipal, "CLP", scanner);
                     break;
                 case 3:
-                    convertirMoneda(monedaPrincipal, "MXN", scanner);
+                    realizarConversion(monedaPrincipal, "MXN", scanner);
                     break;
                 case 4:
-                    convertirMoneda(monedaPrincipal, "ARS", scanner);
+                    realizarConversion(monedaPrincipal, "ARS", scanner);
                     break;
                 case 5:
                     System.out.print("¿Cuál es tu nueva moneda principal? (ejemplo: USD): ");
@@ -58,16 +58,28 @@ public class ConversorDeMonedas {
         scanner.close();
     }
 
-    public static void convertirMoneda(String monedaOrigen, String monedaDestino, Scanner scanner) {
+    public static void realizarConversion(String monedaOrigen, String monedaDestino, Scanner scanner) {
         System.out.print("Ingrese el monto a convertir: ");
         double monto = scanner.nextDouble();
         double tasaCambio = obtenerTasaCambio(monedaOrigen, monedaDestino);
 
         if (tasaCambio > 0) {
             double resultado = monto * tasaCambio;
+            System.out.println("*******************************************");
             System.out.printf("Monto en %s: %.2f%n", monedaDestino, resultado);
         } else {
             System.out.println("No se pudo obtener la tasa de cambio.");
+        }
+
+        // Preguntar si desea realizar otra operación
+        System.out.println("*******************************************");
+        System.out.println("¿Desea realizar otra operación? (s/n): ");
+        scanner.nextLine(); // Limpiar el buffer
+        String respuesta = scanner.nextLine().toLowerCase();
+
+        if (respuesta.equals("n")) {
+            System.out.println("Gracias por usar el sistema de conversión de monedas.");
+            System.exit(0); // Cerrar el programa
         }
     }
 
