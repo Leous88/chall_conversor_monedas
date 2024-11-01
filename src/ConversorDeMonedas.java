@@ -18,7 +18,7 @@ public class ConversorDeMonedas {
         boolean salir = false;
 
         while (!salir) {
-            System.out.println("Elige una opción:");
+            System.out.println("\nElige una opción:");
             System.out.println("1. Convertir de " + monedaPrincipal + " a USD");
             System.out.println("2. Convertir de " + monedaPrincipal + " a CLP");
             System.out.println("3. Convertir de " + monedaPrincipal + " a MXN");
@@ -88,16 +88,12 @@ public class ConversorDeMonedas {
             }
             in.close();
 
-            // Imprimir la respuesta de la API
-            System.out.println("Respuesta de la API: " + response.toString());
-
-            // Parsear el JSON usando GSON
+            // Parsear el JSON usando GSON y retornar la tasa de cambio
             JsonObject jsonObject = JsonParser.parseString(response.toString()).getAsJsonObject();
             return jsonObject.get("conversion_rate").getAsDouble();
 
         } catch (Exception e) {
-            System.out.println("Error al obtener la tasa de cambio: " + e.getMessage());
-            return 0.0;
+            return 0.0; // Retorna 0.0 si hay un error
         }
     }
 }
